@@ -1,0 +1,7 @@
+# IDEs
+.idea
+
+# Cache files
+**/__pycache__
+.DS_Store
+**/.terraform
