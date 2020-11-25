@@ -88,7 +88,7 @@ resource "google_container_node_pool" "dev-node-pool" {
     disk_size_gb   = "30"
     disk_type      = "pd-standard"
     image_type     = "COS"
-    machine_type = "n1-standard-2"
+    machine_type = "e2-standard-2"
     tags = [
       "dev-node-pool"]
 
