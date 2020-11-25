@@ -13,39 +13,39 @@ variable "region" { # For Provider, you must specify the region
   default = "us-east1"
 }
 
-variable "location" { # To make the Cluster multizone
+variable "location" { # Make the Cluster regional
   description = "GCP location, e.g. us-east1"
   default = "us-east1"
 }
 
 ## Network Parameters
-variable "vpc" { # VPC Name from Infra Project(Host)
-  description = "VPC Shared Name from Host Project"
-  default = "devops-teste"
+variable "vpc-name" {
+  description = "VPC Name"
+  default = "dev"
 }
 
-variable "dev_subnet_name" { # Subnet Name from Infra Project(Host)
+variable "dev-subnet-name" {
   description  = "Dev Subnet Name from Host Project"
-  default = "devops-teste"
+  default = "dev-subnet"
 }
 
-variable "dev-subnet" { # 10.0.1.64/26
+variable "dev-subnet-range" {
   description  = "Dev Subnet Range"
-  default = "devops-teste"
+  default = "10.0.0.0/24"
 }
 
-variable "container-ip-range" { # 10.8.0.0/20
+variable "container-subnet-range" {
   description  = "Dev Container Subnet Range"
   default = "10.1.0.0/16"
 }
 
-variable "service-ip-range" { # 10.12.0.0/20
+variable "service-subnet-range" {
   description  = "Dev Service Subnet Range"
   default = "10.2.0.0/16"
 }
 
 ## Master Ip Range Parameters
-variable "master-dev-ip-subnet" { # 10.100.0.128/28
+variable "master-dev-subnet-range" {
   description  = "Master Dev Subnet Range"
   default = "10.3.0.0/28"
 }

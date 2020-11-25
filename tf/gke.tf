@@ -1,10 +1,9 @@
-
 ###### GKE Configuration #######
 resource "google_container_cluster" "dev-cluster" {
   name = "dev"
   location = var.location
-  network = var.vpc
-  subnetwork = var.dev_subnet_name
+  network = var.vpc-name
+  subnetwork = google_compute_subnetwork.dev-subnet.self_link
   resource_labels = {}
 
   default_max_pods_per_node = "110"
@@ -36,14 +35,14 @@ resource "google_container_cluster" "dev-cluster" {
   }
 
   ip_allocation_policy {
-    cluster_secondary_range_name  = "container-ip-range" # POD IP Range
-    services_secondary_range_name = "service-ip-range" # Service IP Range
+    cluster_secondary_range_name  = "container-subnet-range" # POD IP Range
+    services_secondary_range_name = "service-subnet-range" # Service IP Range
   }
 
   private_cluster_config {
     enable_private_endpoint = false
     enable_private_nodes    = true
-    master_ipv4_cidr_block  = var.master-dev-ip-subnet
+    master_ipv4_cidr_block  = var.master-dev-subnet-range
   }
 
   maintenance_policy {
