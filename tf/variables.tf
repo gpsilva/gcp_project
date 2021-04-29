@@ -5,23 +5,23 @@ variable "project_name" {
 
 variable "project_id" {
   description = "GCP project ID"
-  default = "devops-teste"
+  default = "calm-premise-168420"
 }
 
 variable "region" { # For Provider, you must specify the region
   description = "GCP region, e.g. us-east1"
-  default = "us-east1"
+  default = "us-central1"
 }
 
 variable "location" { # Make the Cluster regional
   description = "GCP location, e.g. us-east1"
-  default = "us-east1"
+  default = "us-central1"
 }
 
 ## Network Parameters
 variable "vpc-name" {
   description = "VPC Name"
-  default = "dev"
+  default = "jenkins-cicd"
 }
 
 variable "dev-subnet-name" {
@@ -31,7 +31,7 @@ variable "dev-subnet-name" {
 
 variable "dev-subnet-range" {
   description  = "Dev Subnet Range"
-  default = "10.0.0.0/24"
+  default = "10.50.0.0/24"
 }
 
 variable "container-subnet-range" {
