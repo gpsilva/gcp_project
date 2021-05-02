@@ -31,21 +31,21 @@ variable "dev-subnet-name" {
 
 variable "dev-subnet-range" {
   description  = "Dev Subnet Range"
-  default = "10.50.0.0/24"
+  default = "10.50.0.0/24" # 256 valid ips
 }
 
 variable "container-subnet-range" {
   description  = "Dev Container Subnet Range"
-  default = "10.1.0.0/16"
+  default = "10.50.8.0/21" # 2046 valid ips
 }
 
 variable "service-subnet-range" {
   description  = "Dev Service Subnet Range"
-  default = "10.2.0.0/16"
+  default = "10.50.16.0/22" # 1022 valid ips
 }
 
 ## Master Ip Range Parameters
 variable "master-dev-subnet-range" {
   description  = "Master Dev Subnet Range"
-  default = "10.3.0.0/28"
+  default = "10.50.32.0/28" # 15 valid ips
 }
