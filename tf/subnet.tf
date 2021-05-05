@@ -15,4 +15,4 @@ resource "google_compute_subnetwork" "dev-subnet" {
 #      ip_cidr_range = var.service-subnet-range
 #    }
 #  ]
-#}
+}

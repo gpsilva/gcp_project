@@ -26,7 +26,7 @@ variable "vpc-name" {
 
 variable "dev-subnet-name" {
   description  = "Dev Subnet Name from Host Project"
-  default = "dev-subnet"
+  default = "cicd-dev-subnet"
 }
 
 variable "dev-subnet-range" {
@@ -47,5 +47,5 @@ variable "service-subnet-range" {
 ## Master Ip Range Parameters
 variable "master-dev-subnet-range" {
   description  = "Master Dev Subnet Range"
-  default = "10.3.0.0/28"
+  default = "10.50.32.0/28"
 }
