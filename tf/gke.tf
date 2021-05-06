@@ -57,28 +57,16 @@ resource "google_container_cluster" "dev-cluster" {
     }
 
     http_load_balancing {
-<<<<<<< HEAD
-      disabled = false
+        disabled = false
     }
 
     horizontal_pod_autoscaling {
-      disabled = false
-=======
-      disabled = true
-    }
-
-    horizontal_pod_autoscaling {
-      disabled = true
->>>>>>> 996826559df99f5e70f8891c1dd56548bff8b38f
+        disabled = false
     }
   }
 }
 
-<<<<<<< HEAD
 resource "google_container_node_pool" "dev-node-pool" {
-=======
- resource "google_container_node_pool" "dev-node-pool" {
->>>>>>> 996826559df99f5e70f8891c1dd56548bff8b38f
   name = "dev-node-pool"
   location = var.location
   cluster    = google_container_cluster.dev-cluster.name
@@ -116,10 +104,4 @@ resource "google_container_node_pool" "dev-node-pool" {
       env = "dev"
     }
   }
-<<<<<<< HEAD
 }
-=======
-}
-
-
->>>>>>> 996826559df99f5e70f8891c1dd56548bff8b38f
